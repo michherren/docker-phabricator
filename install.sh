@@ -5,12 +5,12 @@ LIBPHUTIL_VERSION=1ea8d2ad6daa9fd64298db8cebfd1db0b9a1e678
 
 git clone https://github.com/phacility/phabricator.git
 cd /opt/phabricator
-git checkout PHABRICATOR_VERSION
+git checkout $PHABRICATOR_VERSION
 
 git clone https://github.com/phacility/arcanist.git
 cd /opt/arcanist
-git checkout ARCANIST_VERSION
+git checkout $ARCANIST_VERSION
 
 git clone https://github.com/phacility/libphutil.git
 cd /opt/libphutil
-git checkout LIBPHUTIL_VERSION
+git checkout $LIBPHUTIL_VERSION
