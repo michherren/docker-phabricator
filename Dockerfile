@@ -8,7 +8,7 @@ MAINTAINER  Yvonnick Esnault <yvonnick@esnau.lt>
 ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 
 # TODO: review this dependency list
-RUN     apt-get update && apt-get install -y \
+RUN     apt-get update && apt-get install -y vim\
 	        git \
             apache2 \
             curl \
@@ -36,9 +36,9 @@ RUN     apt-get update && apt-get install -y \
 # repeatable builds use the latest SHA
 ADD     download.sh /opt/download.sh
 WORKDIR /opt
-RUN     bash download.sh phabricator 79f2e81f38
-RUN     bash download.sh arcanist    c304c4e045
-RUN     bash download.sh libphutil   55f554b618
+RUN     bash git clone https://github.com/phacility/phabricator.git
+RUN     bash git clone https://github.com/phacility/arcanist.git
+RUN     bash git clone https://github.com/phacility/libphutil.git
 
 # Setup apache
 RUN     a2enmod rewrite
