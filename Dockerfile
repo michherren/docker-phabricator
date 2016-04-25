@@ -35,10 +35,9 @@ RUN     apt-get update && apt-get install -y vim \
 # For some reason phabricator doesn't have tagged releases. To support
 # repeatable builds use the latest SHA
 ADD     download.sh /opt/download.sh
+ADD 	install.sh /opt/install.sh
 WORKDIR /opt
-RUN     bash git clone https://github.com/phacility/phabricator.git
-RUN     bash git clone https://github.com/phacility/arcanist.git
-RUN     bash git clone https://github.com/phacility/libphutil.git
+RUN     bash install.sh
 
 # Setup apache
 RUN     a2enmod rewrite
