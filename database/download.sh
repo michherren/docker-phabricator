@@ -7,7 +7,7 @@ set -eu
 set -o pipefail
 
 # This should match the pinned version of the webapp
-PHABRICATOR_VERSION=5aca529980
+PHABRICATOR_VERSION=ee92a3f25a4172003b6768879219a88de9f03873
 BASE_URL=https://raw.githubusercontent.com/phacility/phabricator/${PHABRICATOR_VERSION}/resources/sql/
 
 mkdir -p /opt/phabricator/resources/sql/
